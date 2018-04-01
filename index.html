@@ -26,6 +26,28 @@ ul {
 <body>
 
 <h1><u>The Haven Times</u></h1>
+<h2 id="clock"></h2>
+    <script>
+      	  var update_loop = setInterval(Main, 1000);
+          Main();
+      	  function Main() {
+      		var time = new Date();
+      		var day = time.getDay();
+      		var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    		var month = time.getMonth();
+    		var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      		var day_of_month = time.getDate();
+      		var year = time.getFullYear();
+      		var hour = time.getHours();
+      		var hours = ((hour + 11) % 12 + 1);
+            var minute = time.getMinutes();
+            var minutes = (minute < 10 ? '0' : '') + minute;
+            var second = time.getSeconds();
+            var seconds = (second < 10 ? '0' : '') + second;
+            var suffix = hour < 12 ? 'AM' : 'PM';
+            document.getElementById("clock").innerHTML = days[day] + '<br />' + months[month] + ' ' + day_of_month + ', ' + year + '<br />' + hours + ':' + minutes + ':' + seconds + ' ' + suffix;
+          }
+        </script>
 
     <p>Welcome to the Haven Times! Check out my <a href="https://m.youtube.com/channel/UC3G4jAlWKebueX6z_gMiAVw">YouTube channel</a></p>
     
