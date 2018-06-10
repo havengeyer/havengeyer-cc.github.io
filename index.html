@@ -16,12 +16,16 @@ h1 {
     color:black
     font-family: furtura;
     text-align: center;
-    position: fixed;
     transform-style: preserve-3d;
     -webkit-animation: rot 4s linear infinite;
     -moz-animation: rot 4s linear infinite;
     -o-animation: rot 4s linear infinite;
     animation: rot 4s linear infinite;
+}
+    
+ .header {
+     position: fixed;
+     width: 100%;
 }
 
 p {
@@ -43,7 +47,7 @@ ul {
 </head>
 <body>
 
-<h1><u>The Haven Times</u></h1>
+<h1 class="header"><u>The Haven Times</u></h1>
 <h2 id="clock"></h2>
     <script>
       	  var update_loop = setInterval(Main, 1000);
